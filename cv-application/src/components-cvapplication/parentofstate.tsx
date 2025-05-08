@@ -15,7 +15,7 @@ function ParentOfState() {
     Zip: "23453",
     Website: "johnbabu.com",
     GitHub: "jonbabu",
-    LinkedIn: "johnbanu",
+    LinkedIn: "jonbabu",
   });
 
   const handleChange = (name: string, value: string) => {
@@ -27,7 +27,13 @@ function ParentOfState() {
 
   return (
     <div className="container">
-      <Dropdown formData={formData} onchange={handleChange} />
+      <div className="container-left">
+        <Dropdown
+          name="Personal Information"
+          formData={formData}
+          onchange={handleChange}
+        />
+      </div>
       <div className="vertical-line"></div>
       <ViewingPage formData={formData} />
     </div>
