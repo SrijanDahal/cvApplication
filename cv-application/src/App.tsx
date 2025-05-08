@@ -1,9 +1,6 @@
+import { PersonalInputsWithLabel } from "./components-cvapplication/input";
+import ViewingPage from "./components-cvapplication/viewingPage";
+
 export default function App() {
-  return (
-    <div className="App">
-      <h1>CV Application</h1>
-      <p>Welcome to the CV application!</p>
-      <p>I am starting to make it.</p>
-    </div>
-  );
+  return <div className="App"></div>;
 }
