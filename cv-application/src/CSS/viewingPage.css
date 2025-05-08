@@ -1,22 +1,24 @@
-
 .viewing-page {
-    background-color: #d7d7d7;
-    height: minmax(auto, 100vh);
-    width: auto;
-    margin: 20px;
-    padding: 20px;
-    }
-    
-    .viewing-page-header {
-    font-size: 30px;
-    color: #333;
-    margin-bottom: 10px;
-    text-align: center;
-    }
-    
-    .viewing-page-content {
-    margin-top: 20px;
-    height: 60vh;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 10px 5px #888;
-    }
+  background-color: #d7d7d7;
+  height: auto;
+  width: auto;
+  margin: 20px;
+  padding: 20px;
+}
+
+.viewing-page-header {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.viewing-page-content {
+  width: auto;
+  aspect-ratio: 1/1.41;
+  margin-top: 20px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px 5px #888;
+  margin: 10px;
+  padding: 15px;
+}

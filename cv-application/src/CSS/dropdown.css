@@ -1,0 +1,21 @@
+.dropdown {
+  margin: 20px;
+  padding: 20px;
+}
+
+.dropdown button {
+  background-color: rgb(185, 185, 185);
+  border: none;
+  padding: 15px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 90%;
+  font-size: 2em;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(37, 37, 37);
+  border: 1px solid rgb(37, 37, 37);
+  border-radius: 5px;
+}
