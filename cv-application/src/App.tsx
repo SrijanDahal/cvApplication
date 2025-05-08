@@ -1,6 +1,9 @@
-import { PersonalInputsWithLabel } from "./components-cvapplication/input";
-import ViewingPage from "./components-cvapplication/viewingPage";
+import PersonalInputsWithLabel from "./components-cvapplication/input.tsx";
 
 export default function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <PersonalInputsWithLabel />
+    </div>
+  );
 }
