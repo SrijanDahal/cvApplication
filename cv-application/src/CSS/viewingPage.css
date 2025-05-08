@@ -1,0 +1,21 @@
+.viewing-page {
+  background-color: #d7d7d7;
+  height: minmax(auto, 100vh);
+  width: auto;
+  margin: 20px;
+  padding: 20px;
+}
+
+.viewing-page-header {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.viewing-page-content {
+  margin-top: 20px;
+  height: 60vh;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px 5px #888;
+}

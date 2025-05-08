@@ -1,0 +1,14 @@
+.input-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 20px;
+}
+
+.input-container-header {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+  grid-column: 1 / -1;
+  text-align: center;
+}

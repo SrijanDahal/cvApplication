@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+}
+
+input {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+label {
+  font-size: 16px;
+  color: #333;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 10px;
+  margin: 0;
+}
+
+.vertical-line {
+  width: 2px; /* thickness */
+  height: 100%; /* height of the line */
+  background-color: #333; /* color of the line */
+  margin: 0 20px; /* optional spacing around it */
+}
