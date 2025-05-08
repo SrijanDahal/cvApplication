@@ -19,11 +19,9 @@ const personalInputsArray = [
   },
   { type: "email", name: "Email", required: true },
   { type: "number", name: "Number", required: true },
-  { type: "text", name: "Address", required: true },
   { type: "text", name: "City", required: true },
   { type: "text", name: "State", required: true },
   { type: "text", name: "Zip", required: true },
-  { type: "text", name: "Country", required: true },
   { type: "url", name: "Website", required: false },
   { type: "url", name: "GitHub", required: false },
   { type: "url", name: "LinkedIn", required: false },
@@ -48,6 +46,7 @@ function PersonalInputs({
   name,
   placeholder,
   required,
+  value,
   onchange,
 }: PersonalInputsProps) {
   return (
@@ -64,6 +63,7 @@ function PersonalInputs({
           name={name}
           placeholder={placeholder}
           required={required}
+          value={value}
           onChange={(e) => onchange(name, e.target.value)}
         />
       </div>
@@ -84,7 +84,7 @@ function PersonalInputsWithLabel({
           name={name}
           placeholder={`Enter your ${name}`}
           required={required}
-          value={formData[name] || ""}
+          value={formData[name]}
           onchange={onchange}
         />
       ))}

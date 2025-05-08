@@ -5,19 +5,17 @@ import ViewingPage from "./viewingPage.tsx";
 
 function ParentOfState() {
   const [formData, setFormData] = useState<Record<string, string>>({
-    FirstName: "",
+    FirstName: "John",
     MiddleName: "",
-    LastName: "",
-    Email: "",
-    Number: "",
-    Address: "",
-    City: "",
-    State: "",
-    Zip: "",
-    Country: "",
-    Website: "",
-    GitHub: "",
-    LinkedIn: "",
+    LastName: "Doe",
+    Email: "doe312@gmail.com",
+    Number: "1234567890",
+    City: "Kansas",
+    State: "Uganda",
+    Zip: "23453",
+    Website: "johnbabu.com",
+    GitHub: "jonbabu",
+    LinkedIn: "johnbanu",
   });
 
   const handleChange = (name: string, value: string) => {
