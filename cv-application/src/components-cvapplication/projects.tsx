@@ -2,13 +2,13 @@ interface ViewingPageProps {
   formData: Record<string, string>;
 }
 
-function Education({ formData }: ViewingPageProps) {
+export default function Projects({ formData }: ViewingPageProps) {
   return (
-    <div className="viewing-page-education-info" style={{ marginTop: "2vw" }}>
-      <h2 style={{ fontSize: "1rem", fontWeight: "300" }}>Education</h2>
+    <div className="viewing-page-projects-info" style={{ marginTop: "2vw" }}>
+      <h2 style={{ fontSize: "1rem", fontWeight: "300" }}>Projects</h2>
       <hr />
       <div
-        className="degree"
+        className="project"
         style={{ display: "flex", justifyContent: "space-between" }}
       >
         <h2
@@ -18,7 +18,7 @@ function Education({ formData }: ViewingPageProps) {
             fontWeight: "bold",
           }}
         >
-          {formData.Degree}
+          {formData.ProjectName}
         </h2>
         <h3
           style={{
@@ -28,7 +28,7 @@ function Education({ formData }: ViewingPageProps) {
             fontWeight: "100",
           }}
         >
-          {formData.Year}
+          {formData.ProjectstartDate} - {formData.ProjectEndDate || "Present"}
         </h3>
       </div>
       <div
@@ -42,21 +42,12 @@ function Education({ formData }: ViewingPageProps) {
             fontWeight: "100",
           }}
         >
-          {formData.University}, GPA: {formData.CGPA}
-        </h3>
-        <h3
-          style={{
-            marginLeft: "0",
-            fontSize: "0.5rem",
-            fontWeight: "100",
-          }}
-        >
-          {formData.EducationLocation}
+          {formData.ProjectLink}
         </h3>
       </div>
       <div className="description">
         <ul>
-          {formData.EducationDescription && (
+          {formData.ProjectDescription && (
             <li
               style={{
                 margin: "2px 0 0 0px",
@@ -64,7 +55,7 @@ function Education({ formData }: ViewingPageProps) {
                 fontWeight: "100",
               }}
             >
-              {formData.EducationDescription}
+              {formData.ProjectDescription}
             </li>
           )}
         </ul>
@@ -72,5 +63,3 @@ function Education({ formData }: ViewingPageProps) {
     </div>
   );
 }
-
-export default Education;

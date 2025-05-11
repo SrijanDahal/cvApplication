@@ -1,31 +1,11 @@
 import "../CSS/input-container.css";
 import "../CSS/viewingPage.css";
-
-const personalInputsArray = [
-  {
-    type: "text",
-    name: "FirstName",
-    required: true,
-  },
-  {
-    type: "text",
-    name: "MiddleName",
-    required: false,
-  },
-  {
-    type: "text",
-    name: "LastName",
-    required: true,
-  },
-  { type: "email", name: "Email", required: true },
-  { type: "number", name: "Number", required: true },
-  { type: "text", name: "City", required: true },
-  { type: "text", name: "State", required: true },
-  { type: "text", name: "Zip", required: true },
-  { type: "url", name: "Website", required: false },
-  { type: "url", name: "GitHub", required: false },
-  { type: "url", name: "LinkedIn", required: false },
-];
+import {
+  PersonalInputsArray,
+  Education,
+  Experience,
+  Projects,
+} from "../data/data";
 
 interface PersonalInputsProps {
   onchange: (name: string, value: string) => void;
@@ -39,6 +19,7 @@ interface PersonalInputsProps {
 interface PersonalInputsWithLabelprops {
   formData: Record<string, string>;
   onchange: (name: string, value: string) => void;
+  array: { type: string; name: string; required: boolean }[];
 }
 
 function PersonalInputs({
@@ -76,20 +57,66 @@ function PersonalInputsWithLabel({
   onchange,
 }: PersonalInputsWithLabelprops) {
   return (
-    <div className="input-container">
-      {personalInputsArray.map(({ type, name, required }) => (
-        <PersonalInputs
-          key={name}
-          type={type}
-          name={name}
-          placeholder={`Enter your ${name}`}
-          required={required}
-          value={formData[name]}
-          onchange={onchange}
-        />
-      ))}
-    </div>
+    <>
+      <Input
+        formData={formData}
+        onchange={onchange}
+        array={PersonalInputsArray}
+      />
+    </>
   );
 }
 
-export default PersonalInputsWithLabel;
+function EducationInputs({ formData, onchange }: PersonalInputsWithLabelprops) {
+  return (
+    <>
+      <Input formData={formData} onchange={onchange} array={Education} />
+    </>
+  );
+}
+
+function ExperienceInputs({
+  formData,
+  onchange,
+}: PersonalInputsWithLabelprops) {
+  return (
+    <>
+      <Input formData={formData} onchange={onchange} array={Experience} />
+    </>
+  );
+}
+
+function ProjectsInputs({ formData, onchange }: PersonalInputsWithLabelprops) {
+  return (
+    <>
+      <Input formData={formData} onchange={onchange} array={Projects} />
+    </>
+  );
+}
+
+function Input({ formData, onchange, array }: PersonalInputsWithLabelprops) {
+  return (
+    <>
+      <div className="input-container">
+        {array.map(({ type, name, required }) => (
+          <PersonalInputs
+            key={name}
+            type={type}
+            name={name}
+            placeholder={`Enter your ${name}`}
+            required={required}
+            value={formData[name]}
+            onchange={onchange}
+          />
+        ))}
+      </div>
+    </>
+  );
+}
+
+export {
+  PersonalInputsWithLabel,
+  EducationInputs,
+  ExperienceInputs,
+  ProjectsInputs,
+};

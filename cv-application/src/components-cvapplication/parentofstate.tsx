@@ -16,6 +16,24 @@ function ParentOfState() {
     Website: "johnbabu.com",
     GitHub: "jonbabu",
     LinkedIn: "jonbabu",
+    Degree: "Bachelors",
+    University: "University of Kansas",
+    Year: "Aug 2023",
+    CGPA: "3.5",
+    EducationLocation: "Kansas",
+    EducationDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    Company: "Tech Company",
+    Position: "Software Engineer",
+    ExperienceStartDate: "Jan 2022",
+    ExperienceEndDate: "Dec 2022",
+    ExperienceLocation: "Kansas",
+    ExperienceDescription: "Worked on various projects.",
+    ProjectName: "Project A",
+    ProjectstartDate: "Jan 2023",
+    ProjetendDate: "Dec 2023",
+    ProjectDescription: "Description of Project A",
+    ProjectLink: "",
   });
 
   const handleChange = (name: string, value: string) => {

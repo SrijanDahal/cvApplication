@@ -1,9 +1,13 @@
 import { useState } from "react";
-import PersonalInputsWithLabel from "../components-cvapplication/input.tsx";
 import "../CSS/dropdown.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import InputfieldsEducation from "../components-cvapplication/education.tsx";
+import {
+  PersonalInputsWithLabel,
+  EducationInputs,
+  ExperienceInputs,
+  ProjectsInputs,
+} from "../components-cvapplication/input.tsx";
 
 interface PersonalInputsWithLabelprops {
   name: string;
@@ -13,40 +17,63 @@ interface PersonalInputsWithLabelprops {
 
 function Dropdown({ name, formData, onchange }: PersonalInputsWithLabelprops) {
   const [isOpen, setIsOpen] = useState(0);
-  const [isOpenEducation, setIsOpenEducation] = useState(0);
-
-  function toggleDropdown() {
-    setIsOpen((isOpen) => (isOpen === 0 ? 1 : 0));
-  }
-
-  function toggleDropdowneducation() {
-    setIsOpenEducation((isOpenEducation) => (isOpenEducation === 1 ? 0 : 1));
-  }
 
   return (
     <div className="dropdown">
       <div className="personal-information">
-        <button className="dropdown-button" onClick={toggleDropdown}>
+        <button className="dropdown-button" onClick={() => setIsOpen(1)}>
           {name}
           <FontAwesomeIcon
             icon={faCaretDown}
             style={{ alignContent: "right" }}
           />
         </button>
-        {isOpen === 0 && (
-          <PersonalInputsWithLabel formData={formData} onchange={onchange} />
+        {isOpen === 1 && (
+          <PersonalInputsWithLabel
+            formData={formData}
+            onchange={onchange}
+            array={[]}
+          />
         )}
       </div>
-      <div className="education">
-        <button className="dropdown-button" onClick={toggleDropdowneducation}>
+      <div className="education-information">
+        <button className="dropdown-button" onClick={() => setIsOpen(2)}>
           Education
           <FontAwesomeIcon
             icon={faCaretDown}
             style={{ alignContent: "right" }}
           />
         </button>
-        {isOpenEducation === 1 && (
-          <InputfieldsEducation formData={formData} onchange={onchange} />
+        {isOpen === 2 && (
+          <EducationInputs formData={formData} onchange={onchange} array={[]} />
+        )}
+      </div>
+      <div className="experience-information">
+        <button className="dropdown-button" onClick={() => setIsOpen(3)}>
+          Experience
+          <FontAwesomeIcon
+            icon={faCaretDown}
+            style={{ alignContent: "right" }}
+          />
+        </button>
+        {isOpen === 3 && (
+          <ExperienceInputs
+            formData={formData}
+            onchange={onchange}
+            array={[]}
+          />
+        )}
+      </div>
+      <div className="projects-information">
+        <button className="dropdown-button" onClick={() => setIsOpen(4)}>
+          Projects
+          <FontAwesomeIcon
+            icon={faCaretDown}
+            style={{ alignContent: "right" }}
+          />
+        </button>
+        {isOpen === 4 && (
+          <ProjectsInputs formData={formData} onchange={onchange} array={[]} />
         )}
       </div>
     </div>
