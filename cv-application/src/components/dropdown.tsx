@@ -21,7 +21,10 @@ function Dropdown({ name, formData, onchange }: PersonalInputsWithLabelprops) {
   return (
     <div className="dropdown">
       <div className="personal-information">
-        <button className="dropdown-button" onClick={() => setIsOpen(1)}>
+        <button
+          className="dropdown-button"
+          onClick={() => setIsOpen(isOpen !== 1 ? 1 : 0)}
+        >
           {name}
           <FontAwesomeIcon
             icon={faCaretDown}
@@ -37,7 +40,10 @@ function Dropdown({ name, formData, onchange }: PersonalInputsWithLabelprops) {
         )}
       </div>
       <div className="education-information">
-        <button className="dropdown-button" onClick={() => setIsOpen(2)}>
+        <button
+          className="dropdown-button"
+          onClick={() => setIsOpen(isOpen !== 2 ? 2 : 0)}
+        >
           Education
           <FontAwesomeIcon
             icon={faCaretDown}
@@ -49,7 +55,10 @@ function Dropdown({ name, formData, onchange }: PersonalInputsWithLabelprops) {
         )}
       </div>
       <div className="experience-information">
-        <button className="dropdown-button" onClick={() => setIsOpen(3)}>
+        <button
+          className="dropdown-button"
+          onClick={() => setIsOpen(isOpen !== 3 ? 3 : 0)}
+        >
           Experience
           <FontAwesomeIcon
             icon={faCaretDown}
@@ -65,7 +74,10 @@ function Dropdown({ name, formData, onchange }: PersonalInputsWithLabelprops) {
         )}
       </div>
       <div className="projects-information">
-        <button className="dropdown-button" onClick={() => setIsOpen(4)}>
+        <button
+          className="dropdown-button"
+          onClick={() => setIsOpen(isOpen !== 4 ? 4 : 0)}
+        >
           Projects
           <FontAwesomeIcon
             icon={faCaretDown}
